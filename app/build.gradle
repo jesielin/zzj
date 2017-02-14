@@ -45,4 +45,6 @@ dependencies {
 //    compile 'in.srain.cube:cube-sdk:1.0.42@aar'
 //    compile 'in.srain.cube:ultra-ptr:1.0.9@aar'
     compile 'com.chanven.lib:cptr:1.1.0'
+
+    compile 'com.malinskiy:superrecyclerview:1.1.4'
 }

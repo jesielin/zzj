@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
 import cc.shawn.zzj.R;
 import cc.shawn.zzj.base.BaseFragment;
 
@@ -18,11 +19,17 @@ public class SocialFragment extends BaseFragment implements SocialContract.View 
 
     SocialContract.Presenter presenter;
     View contentView;
+
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         presenter = new SocialPresenter(this);
         contentView = View.inflate(getActivity(), R.layout.fragment_social,null);
+
+        ButterKnife.bind(this,contentView);
+
         return contentView;
     }
 }

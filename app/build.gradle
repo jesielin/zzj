@@ -35,16 +35,8 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
 //    compile 'com.github.bumptech.glide:glide:4.0.0-SNAPSHOT'
 //    compile 'com.github.florent37:glidepalette:2.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.1@aar'
     compile 'com.githang:status-bar-compat:0.5.1'
-
-//    compile 'com.google.android:support-v4:r7'
-//    compile 'de.greenrobot:eventbus:2.4.0'
-//
-//    compile 'in.srain.cube:clog:1.0.2'
-//    compile 'in.srain.cube:cube-sdk:1.0.42@aar'
-//    compile 'in.srain.cube:ultra-ptr:1.0.9@aar'
-    compile 'com.chanven.lib:cptr:1.1.0'
-
     compile 'com.malinskiy:superrecyclerview:1.1.4'
 }

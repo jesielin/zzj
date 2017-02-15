@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@color/md_white_1000"
+    android:padding="5dp"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/image"
+        android:layout_height="match_parent"
+        android:src="@drawable/tab1_icon_selector"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:id="@+id/title"
+            android:text="的说法是发的"
+            android:textColor="@color/text"/>
+        <TextView
+            android:lines="1"
+            android:textSize="12dp"
+            android:id="@+id/subtitle"
+            android:textColor="@color/text_grey"
+            android:text="第三方的萨芬范德萨范德萨范德萨"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1000"
+                android:textSize="12dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/text_grey"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1000"
+                android:id="@+id/date"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="12dp"
+                android:textColor="@color/text_grey"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

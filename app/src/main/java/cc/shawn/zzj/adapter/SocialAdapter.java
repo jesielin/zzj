@@ -71,7 +71,7 @@ public class SocialAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewH
     }
 
     public static final int HEADVIEW_SIZE = 1;
-
+    public String url = "http://www.qqtouxiang.com/d/file/qinglv/20170212/9fd014a7c29552d364d58e5df64f0ed5.jpg";
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
@@ -79,7 +79,7 @@ public class SocialAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewH
 
         }else{
             SocialViewHolder viewHolder = (SocialViewHolder)holder;
-            Glide.with(mContext).load("http://image.baidu.com/search/detail?ct=503316480&z=&tn=baiduimagedetail&ipn=d&word=%E6%9D%8E%E5%86%B0%E5%86%B0&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=-1&cs=3651565664,3967726937&os=3219310922,2130346334&pn=22&rn=1&di=128635185280&ln=3936&fr=&fmq=1487207977247_R&ic=0&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&is=0,0&istype=2&ist=&jit=&bdtype=11&pi=0&gsm=0&objurl=http%3A%2F%2Fwww.hubei88.com%2Fuploads%2Fallimg%2F170105%2F0T60945G_0.jpg&rpstart=0&rpnum=0&adpicid=0")
+            Glide.with(mContext).load(url)
                     .diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.color.bg_no_photo).transform(new GlideCircleTransform(mContext)).into(viewHolder.ivHead);
 
         }

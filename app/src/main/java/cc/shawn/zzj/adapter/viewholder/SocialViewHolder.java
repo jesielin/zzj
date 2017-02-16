@@ -27,10 +27,10 @@ public abstract class SocialViewHolder extends RecyclerView.ViewHolder {
 
     public int viewType;
 
-    @BindView(R.id.viewStub)
-    public ViewStub tvHead;
-    @BindView(R.id.headIv)
+    @BindView(R.id.nameTv)
     public TextView tvName;
+    @BindView(R.id.headIv)
+    public ImageView ivHead;
     @BindView(R.id.urlTipTv)
     public TextView tvUrlTip;
 
@@ -66,13 +66,13 @@ public abstract class SocialViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this,itemView);
         this.viewType = viewType;
 
-        ViewStub viewStub = (ViewStub) itemView.findViewById(R.id.viewStub);
+            ViewStub viewStub = (ViewStub) itemView.findViewById(R.id.viewStub);
 
-        initSubView(viewType, viewStub);
+            initSubView(viewType, viewStub);
+            snsPopupWindow = new SnsPopupWindow(itemView.getContext());
 
 
 
-        snsPopupWindow = new SnsPopupWindow(itemView.getContext());
 
     }
 

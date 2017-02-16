@@ -11,9 +11,11 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import cc.shawn.zzj.R;
+import cc.shawn.zzj.adapter.SocialAdapter;
 import cc.shawn.zzj.base.BaseFragment;
 import cc.shawn.zzj.base.BaseRecyclerAdapter;
 import cc.shawn.zzj.base.BaseRecyclerFragment;
+import cc.shawn.zzj.util.DebugLog;
 
 /**
  * Created by shawn on 2017-02-12.
@@ -29,7 +31,8 @@ public class SocialFragment extends BaseRecyclerFragment implements SocialContra
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return null;
+        DebugLog.e("context:"+getActivity());
+        return new SocialAdapter(getActivity(),presenter);
     }
 
     @Override

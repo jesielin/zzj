@@ -8,15 +8,10 @@ import android.view.ViewStub;
  * Created by shawn on 17/2/15.
  */
 
-public class HeaderViewHolder extends SocialViewHolder {
+public class HeaderViewHolder extends RecyclerView.ViewHolder{
 
 
     public HeaderViewHolder(View itemView) {
-        super(itemView,TYPE_HEADER);
-    }
-
-    @Override
-    public void initSubView(int viewType, ViewStub viewStub) {
-
+        super(itemView);
     }
 }

@@ -12,25 +12,26 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.List;
 
 import cc.shawn.zzj.R;
-import cc.shawn.zzj.adapter.viewholder.SocialHeaderViewHolder;
+import cc.shawn.zzj.adapter.viewholder.HomeHeaderViewHolder;
 import cc.shawn.zzj.adapter.viewholder.SocialImageViewHolder;
 import cc.shawn.zzj.adapter.viewholder.SocialViewHolder;
 import cc.shawn.zzj.base.BaseRecyclerAdapter;
-import cc.shawn.zzj.module.social.SocialContract;
+import cc.shawn.zzj.module.home.HomeContract;
 import cc.shawn.zzj.widget.GlideCircleTransform;
 
 /**
  * Created by shawn on 17/2/15.
  */
 
-public class SocialAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewHolder> {
+public class HomeAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewHolder> {
 
 
+    private final int TYPE_HEADER = 0x001;
+    private final int TYPE_ITEM = 0x002;
 
-
-    private SocialContract.Presenter mPresenter;
+    private HomeContract.Presenter mPresenter;
     private Context mContext;
-    public SocialAdapter(Context context,SocialContract.Presenter socialPresenter) {
+    public HomeAdapter(Context context, HomeContract.Presenter socialPresenter) {
         this.mPresenter = socialPresenter;
         this.mContext = context;
     }
@@ -58,9 +59,9 @@ public class SocialAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewH
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder viewHolder = null;
-        if (viewType == SocialViewHolder.TYPE_HEADER) {
-            View headView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_social_header, parent, false);
-            viewHolder = new SocialHeaderViewHolder(headView);
+        if (viewType == TYPE_HEADER) {
+            View headView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_header, parent, false);
+            viewHolder = new HomeHeaderViewHolder(headView);
         } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_social, parent, false);
             viewHolder = new SocialImageViewHolder(view);
@@ -73,7 +74,7 @@ public class SocialAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewH
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        if(getItemViewType(position) == SocialViewHolder.TYPE_HEADER){
+        if(getItemViewType(position) == TYPE_HEADER){
 
         }else{
             SocialViewHolder viewHolder = (SocialViewHolder)holder;
@@ -88,9 +89,9 @@ public class SocialAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewH
     public int getItemViewType(int position) {
 
         if (position == 0) {
-            return SocialViewHolder.TYPE_HEADER;
+            return TYPE_HEADER;
         } else
-            return SocialViewHolder.TYPE_IMAGE;
+            return TYPE_ITEM;
 
     }
 

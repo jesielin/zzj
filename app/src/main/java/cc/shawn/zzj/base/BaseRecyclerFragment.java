@@ -30,7 +30,7 @@ public abstract class BaseRecyclerFragment  extends BaseFragment implements Swip
 
     protected View contentView;
     @BindView(R.id.list)
-    SuperRecyclerView mRecycler;
+    protected SuperRecyclerView mRecycler;
     protected SparseItemRemoveAnimator mSparseAnimator;
     protected RecyclerView.LayoutManager mLayoutManager;
     protected Handler mHandler;
@@ -43,6 +43,8 @@ public abstract class BaseRecyclerFragment  extends BaseFragment implements Swip
         ButterKnife.bind(this,contentView);
 
         mAdapter = getAdapter();
+
+
 
         mLayoutManager = getLayoutManager();
         mRecycler.setLayoutManager(mLayoutManager);

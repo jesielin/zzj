@@ -5,4 +5,5 @@ package cc.shawn.zzj.base;
  */
 
 public interface BaseView {
+
 }

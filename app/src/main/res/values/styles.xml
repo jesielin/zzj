@@ -9,7 +9,16 @@
         <item name="colorAccent">@color/md_orange_A700</item>
         <item name="android:windowBackground">@color/main_bg</item>
     </style>
-
+    <style name="comment_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!-- 显示对话框时当前的屏幕是否变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
     <style name="scroll_none_effects">
         <item name="android:listSelector">@android:color/transparent</item>
         <item name="android:cacheColorHint">@android:color/transparent</item>

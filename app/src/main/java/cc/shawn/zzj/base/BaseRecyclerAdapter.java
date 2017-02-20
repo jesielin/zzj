@@ -14,6 +14,8 @@ import cc.shawn.zzj.adapter.NewsAdapter;
 
 public abstract class BaseRecyclerAdapter<T,VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 
+
+    public abstract void setDatas(List<T> datas);
     public abstract void remove(int position);
     public abstract void clear();
 

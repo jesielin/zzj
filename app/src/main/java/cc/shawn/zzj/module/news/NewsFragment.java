@@ -63,22 +63,22 @@ public class NewsFragment extends BaseRecyclerFragment implements NewsContract.V
     public void onRefresh() {
         Toast.makeText(getActivity(), "Refresh", Toast.LENGTH_LONG).show();
 
-        mHandler.postDelayed(new Runnable() {
-            public void run() {
-                mAdapter.add("New stuff");
-            }
-        }, 2000);
+//        mHandler.postDelayed(new Runnable() {
+//            public void run() {
+//                mAdapter.add("New stuff");
+//            }
+//        }, 2000);
     }
 
     @Override
     public void onMoreAsked(int numberOfItems, int numberBeforeMore, int currentItemPos) {
         Toast.makeText(getActivity(), "More", Toast.LENGTH_LONG).show();
 
-        mHandler.postDelayed(new Runnable() {
-            public void run() {
-                mAdapter.add("More asked, more served");
-            }
-        }, 1000);
+//        mHandler.postDelayed(new Runnable() {
+//            public void run() {
+//                mAdapter.add("More asked, more served");
+//            }
+//        }, 1000);
     }
 
     @Override

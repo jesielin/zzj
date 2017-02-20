@@ -60,6 +60,11 @@ public class NewsAdapter extends BaseRecyclerAdapter<String,NewsAdapter.ViewHold
     }
 
     @Override
+    public void setDatas(List<String> datas) {
+
+    }
+
+    @Override
     public void remove(int position) {
         list.remove(position);
         notifyItemRemoved(position);

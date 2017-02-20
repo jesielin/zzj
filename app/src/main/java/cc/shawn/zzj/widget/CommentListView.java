@@ -21,7 +21,7 @@ import java.util.List;
 
 import cc.shawn.zzj.MyApp;
 import cc.shawn.zzj.R;
-import cc.shawn.zzj.bean.CommentItem;
+import cc.shawn.zzj.bean.ComItem;
 import cc.shawn.zzj.spannable.CircleMovementMethod;
 import cc.shawn.zzj.spannable.SpannableClickable;
 import cc.shawn.zzj.util.UrlUtils;
@@ -34,7 +34,7 @@ public class CommentListView extends LinearLayout {
     private int itemSelectorColor;
     private OnItemClickListener onItemClickListener;
     private OnItemLongClickListener onItemLongClickListener;
-    private List<CommentItem> mDatas;
+    private List<ComItem> mDatas;
     private LayoutInflater layoutInflater ;
 
     public OnItemClickListener getOnItemClickListener() {
@@ -53,15 +53,15 @@ public class CommentListView extends LinearLayout {
         this.onItemLongClickListener = onItemLongClickListener;
     }
 
-    public void setDatas(List<CommentItem> datas){
+    public void setDatas(List<ComItem> datas){
         if(datas == null ){
-            datas = new ArrayList<CommentItem>();
+            datas = new ArrayList<ComItem>();
         }
         mDatas = datas;
         notifyDataSetChanged();
     }
 
-    public List<CommentItem> getDatas(){
+    public List<ComItem> getDatas(){
         return mDatas;
     }
 
@@ -119,25 +119,25 @@ public class CommentListView extends LinearLayout {
         TextView commentTv = (TextView) convertView.findViewById(R.id.commentTv);
         final CircleMovementMethod circleMovementMethod = new CircleMovementMethod(itemSelectorColor, itemSelectorColor);
 
-        final CommentItem bean = mDatas.get(position);
-        String name = bean.getUser().getName();
-        String id = bean.getId();
+        final ComItem bean = mDatas.get(position);
+        String name = bean.ownerUUID;
+        String id = bean.ownerUUID;
         String toReplyName = "";
-        if (bean.getToReplyUser() != null) {
-            toReplyName = bean.getToReplyUser().getName();
+        if (!TextUtils.isEmpty(bean.friendUUID)) {
+            toReplyName = bean.friendUUID;
         }
 
         SpannableStringBuilder builder = new SpannableStringBuilder();
-        builder.append(setClickableSpan(name, bean.getUser().getId()));
+        builder.append(setClickableSpan(name, bean.ownerUUID));
 
         if (!TextUtils.isEmpty(toReplyName)) {
 
             builder.append(" 回复 ");
-            builder.append(setClickableSpan(toReplyName, bean.getToReplyUser().getId()));
+            builder.append(setClickableSpan(toReplyName, bean.friendUUID));
         }
         builder.append(": ");
         //转换表情字符
-        String contentBodyStr = bean.getContent();
+        String contentBodyStr = bean.message;
         builder.append(UrlUtils.formatUrlString(contentBodyStr));
         commentTv.setText(builder);
 

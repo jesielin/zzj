@@ -96,6 +96,11 @@ public class MainActivity extends BaseActivity {
             fragmentManager.beginTransaction().hide(currentFragment).add(R.id.content, to).commit();
         }
         currentFragment = to;
-
+    }
+    public void showNav(){
+        bottomNav.setVisibility(View.VISIBLE);
+    }
+    public void hideNav(){
+        bottomNav.setVisibility(View.GONE);
     }
 }

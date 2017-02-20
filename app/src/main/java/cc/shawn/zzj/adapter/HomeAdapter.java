@@ -37,6 +37,11 @@ public class HomeAdapter extends BaseRecyclerAdapter<String,RecyclerView.ViewHol
     }
 
     @Override
+    public void setDatas(List<String> datas) {
+
+    }
+
+    @Override
     public void remove(int position) {
 
     }

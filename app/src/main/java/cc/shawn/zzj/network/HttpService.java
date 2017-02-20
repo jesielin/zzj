@@ -1,12 +1,16 @@
 package cc.shawn.zzj.network;
 
 import java.util.List;
+import java.util.Map;
 
 import cc.shawn.zzj.bean.IndexAdvert;
 import cc.shawn.zzj.bean.Notice;
+import cc.shawn.zzj.bean.SocialItem;
 import cc.shawn.zzj.bean.Tech;
+import cc.shawn.zzj.module.social.SocialContract;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 import rx.Observable;
 
 /**
@@ -86,15 +90,17 @@ public interface HttpService {
      */
     @GET("/setUserinfo")
     Observable<HttpResult<Object>> setUserinfo(
-            @Query("uuid")String uuid,
-            @Query("nickName")String nickName,
-            @Query("status")String status,
-            @Query("userType")int userType,
-            @Query("level")String level,
-            @Query("isRecommend")int isRecommend,
-            @Query("summary")String summary,
-            @Query("headSculpture")String headSculpture,
-            @Query("sex")String sex,
-            @Query("sign") String sign
+            @QueryMap Map<String, String> options
     );
+
+
+    /**
+     * 获取朋友圈列表
+     * @param page 第几页
+     * @param rows 分页总数
+     * @param sign
+     * @return
+     */
+    @GET("/getAllMoment")
+    Observable<HttpResult<List<SocialItem>>> getSocialItems(@Query("page") int page,@Query("rows") int rows,@Query("sign") String sign);
 }

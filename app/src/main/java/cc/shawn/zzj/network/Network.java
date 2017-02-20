@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import cc.shawn.zzj.bean.IndexAdvert;
 import cc.shawn.zzj.bean.SocialItem;
+import cc.shawn.zzj.bean.SocialTotal;
 import okhttp3.OkHttpClient;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
@@ -89,8 +90,8 @@ public class Network {
         return compose(httpService.login(loginName,identifyingCode,sign));
     }
 
-    public Observable<HttpResult<List<SocialItem>>> getSocialItems(int page,int rows){
-        return compose(httpService.getSocialItems(page,rows,sign));
+    public Observable<HttpResult<SocialTotal>> getSocialItems(String userUUID, int page, int rows){
+        return compose(httpService.getSocialItems(userUUID,page,rows,sign));
     }
 
 

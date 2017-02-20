@@ -209,6 +209,7 @@ public class SocialFragment extends BaseRecyclerFragment implements SocialContra
 
     @Override
     public void onRefresh() {
+        mRecycler.setRefreshing(true);
         presenter.loadData(TYPE_PULL_REFRESH);
 
     }

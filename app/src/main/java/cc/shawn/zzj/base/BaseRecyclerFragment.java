@@ -111,10 +111,12 @@ public abstract class BaseRecyclerFragment  extends BaseFragment implements Swip
 //        thread.start();
 //        mRecycler.setRefreshing(true);
 
+        mRecycler.hideProgress();
+        mRecycler.getEmptyView().setVisibility(View.GONE);
         mRecycler.setAdapter(mAdapter);
         mRecycler.setRefreshListener(this);
         mRecycler.setRefreshingColorResources(android.R.color.holo_orange_light, android.R.color.holo_blue_light, android.R.color.holo_green_light, android.R.color.holo_red_light);
-        mRecycler.setupMoreListener(this, 0);
+        mRecycler.setupMoreListener(this, 1);
         return contentView;
     }
 

@@ -103,7 +103,7 @@ public class SocialAdapter extends BaseRecyclerAdapter<SocialItem,RecyclerView.V
                     .diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.color.bg_no_photo).transform(new GlideCircleTransform(mContext)).into(viewHolder.ivHead);
 
             final SocialItem socialItem = items.get(position-HEADVIEW_SIZE);
-            viewHolder.tvName.setText(socialItem.owner);
+            viewHolder.tvName.setText(socialItem.momentOwner);
             viewHolder.tvTime.setText(socialItem.createDate);
             if(!TextUtils.isEmpty(socialItem.message)){
                 viewHolder.tvContent.setExpand(socialItem.isExpand());

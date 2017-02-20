@@ -6,9 +6,11 @@ import java.util.Map;
 import cc.shawn.zzj.bean.IndexAdvert;
 import cc.shawn.zzj.bean.Notice;
 import cc.shawn.zzj.bean.SocialItem;
+import cc.shawn.zzj.bean.SocialTotal;
 import cc.shawn.zzj.bean.Tech;
 import cc.shawn.zzj.module.social.SocialContract;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 import rx.Observable;
@@ -95,12 +97,13 @@ public interface HttpService {
 
 
     /**
-     * 获取朋友圈列表
-     * @param page 第几页
-     * @param rows 分页总数
+     * 查看朋友圈列表
+     * @param userUUID
+     * @param page
+     * @param rows
      * @param sign
      * @return
      */
     @GET("/getAllMoment")
-    Observable<HttpResult<List<SocialItem>>> getSocialItems(@Query("page") int page,@Query("rows") int rows,@Query("sign") String sign);
+    Observable<HttpResult<SocialTotal>> getSocialItems(@Query("userUUID")String userUUID, @Query("page") int page, @Query("rows") int rows, @Query("sign") String sign);
 }
